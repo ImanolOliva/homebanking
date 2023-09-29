@@ -1,0 +1,40 @@
+
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Crea tu cuenta</h2>
+
+              <form  [formGroup]="form">
+                <div class="form-outline mb-4">
+                  <input type="text" id="userName" class="form-control" formControlName="userName"/>
+                  <label class="form-label" for="userName">Nombre</label>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="email" id="email" class="form-control" formControlName="email" />
+                  <label class="form-label" for="email">Email</label>
+                  <div *ngIf="form.get('email').hasError('email')">
+                    El formato del email no es válido.
+                  </div>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="password" id="password" class="form-control"formControlName="password" />
+                  <label class="form-label" for="password">Password</label>
+                  <div *ngIf="form.get('password').hasError('minlength')">
+                    La contraseña debe contener 4 numeros
+                  </div>
+                </div>
+                 <div class="d-flex justify-content-center">
+                  <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" [disabled]="!form.valid" (click)="save()" >Register</button>
+                  </div>
+                <p class="text-center text-muted mt-5 mb-0">Ya te encuentras registrado?
+                   <a class="fw-bold text-body"  [routerLink]="['/login']"><u>Inicio sesion</u></a></p>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 

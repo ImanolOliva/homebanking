@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="app-home-wrapper">
+      <app-home></app-home>
+    </div>
+    <div class="form-container">
+      <form [formGroup]="form">
+        <div class="form-outline form-black mb-4">
+          <div class="withdrawal-info">
+            <p>¿Cuánto desea retirar?
+          </div>
+          <input type="number" id="salary" class="form-control" formControlName="salary" min="0"/>
+          <label class="form-label" for="salary">Ingrese cantidad de dinero</label>
+          <br>
+          <button (click)="onEnterKey()">Retirar efectivo</button>
+        </div>
+        <!-- Agrega aquí otros elementos del formulario si los tienes -->
+      </form>
+    </div>
+</div>
+  
