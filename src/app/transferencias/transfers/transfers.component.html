@@ -2,15 +2,18 @@
 <div class="container">
     <div class="col">
         <div class="row">
-            <button class="btn-success">Agregar destinatario</button>
-            <select name="" id="">
-                
-                <option value="1">Numero de cuenta
-                    <input type="text"> Numero de cuenta
-                </option>
-                <option value="2">Nombre del titular</option>
-                <option value="3">Dinero a ingresar</option>
-            </select>
+            <button class="btn-success" (click)="agregarDestinatario()">Agregar destinatario</button>
+           <form [formGroup]="form">
+            <div *ngFor="let destinatario of destinatarios">
+                <label  class="form-label" for="numeroCuenta"> Número de cuenta:</label>
+                <input class="form-control" formControlName="numeroCuenta"  type="number" name="numeroCuenta">
+                <label  class="form-label" for="nombre"> Nombre del titular:</label>
+                <input class="form-control" formControlName="nombre"  type="number" name="nombre">
+                <label  class="form-label" for="dineroTransferir"> Dinero a transferir:</label>
+                <input class="form-control" formControlName="dineroTransferir"  type="number" name="dineroTransferir">
+                <hr>
+            </div>
+            </form>
         </div>
     </div>
 </div>

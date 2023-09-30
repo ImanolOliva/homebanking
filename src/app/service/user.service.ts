@@ -48,7 +48,7 @@ export class UserService {
   }
   
 
-
+  
   // Este método realiza la autenticación y emite el estado de autenticación
   loginUser(request: UserRegister): void {
     this.postUserLogin(request).subscribe(
