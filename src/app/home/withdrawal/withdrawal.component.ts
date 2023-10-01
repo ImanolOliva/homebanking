@@ -19,15 +19,11 @@ export class WithdrawalComponent implements OnInit {
   constructor(private formBuilder:FormBuilder,private userService:UserService) { }
 
   ngOnInit() {
-    this.currentUser = this.getFromLocalStorage();
+    this.currentUser = this.userService.getFromLocalStorage();
     console.log(this.currentUser);
     this.createForm();
   }
-  getFromLocalStorage() {
-    const userString = localStorage.getItem('currentUser');
-    return userString ? JSON.parse(userString) : null;
-  }
-
+  
   createForm() {
     this.form = this.formBuilder.group({
       salary: new FormControl('', Validators.requiredTrue)

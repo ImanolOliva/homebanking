@@ -17,15 +17,11 @@ export class HomeComponent{
   public currentUser;
 
   ngOnInit(): void {
-    this.currentUser = this.getCurrentUserFormLocalStorage();
+    this.currentUser = this.userService.getFromLocalStorage();
     this.userService.getMenuItems();
    }
  
-   getCurrentUserFormLocalStorage(){
-     const userString = localStorage.getItem('currentUser');
-     return userString ? JSON.parse(userString) : null;
- 
-   }
+
  
    isSalaryPage(): boolean {
      /** Con esto explicito que si el path no es salario, se salga */
@@ -35,16 +31,9 @@ export class HomeComponent{
          /** Con esto explicito que si el path no es withdrawal, se salga */
      return this.route.snapshot.routeConfig?.path === 'withdrawal'
    }
-   isContactUs(): boolean{
-     /** Con esto explicito que si el path no es withdrawal, se salga */
-   return this.route.snapshot.routeConfig?.path === 'contact-us'
-   }
+    /**Si el path no es transfers */
    isTransfers(): boolean{
      return this.route.snapshot.routeConfig?.path === 'transfers'
- 
-   }
-   exit(): boolean{
-     return this.route.snapshot.routeConfig?.path === 'exit'
  
    }
 }

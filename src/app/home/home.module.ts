@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
-import { TransfersComponent } from '../transferencias/transfers/transfers.component';
 import { DepositComponent } from './deposit/deposit.component';
 import { WithdrawalComponent } from './withdrawal/withdrawal.component';
 import { GoOutComponent } from './go-out/go-out.component';
@@ -13,20 +11,20 @@ import { RouterModule } from '@angular/router';
 import { TransaccionesComponent } from './transacciones/transacciones.component';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { TransfersComponent } from './transfers/transfers.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ContactUsComponent,
-    TransfersComponent,
     DepositComponent,
     WithdrawalComponent,
     GoOutComponent,
     SalaryComponent,
     NavbarComponent,
     TransaccionesComponent,
-    TarjetaComponent
+    TarjetaComponent,
+    TransfersComponent
   ],
   imports: [
     CommonModule,

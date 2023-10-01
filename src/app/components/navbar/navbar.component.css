@@ -1,0 +1,29 @@
+/* Estilos para el contenedor principal (sidebar) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%; /* Establece la altura al 100% */
+    width: 250px; /* Ancho del navbar */
+    background-color: #333; /* Color de fondo del navbar */
+    color: #fff; /* Color de texto del navbar */
+    overflow-y: auto; /* Agrega desplazamiento vertical si es necesario */
+  }
+  
+  /* Estilos para el navbar dentro del contenedor */
+  .navbar {
+    padding: 20px; /* Añade relleno al contenido del navbar */
+  }
+  
+  /* Estilos para los elementos del menú */
+  .navbar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 0;
+  }
+  
+  .navbar a:hover {
+    background-color: #555; /* Cambia el color de fondo al pasar el mouse */
+  }
+  

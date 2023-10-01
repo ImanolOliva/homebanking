@@ -18,7 +18,7 @@ export class DepositComponent implements OnInit{
   constructor(private userService:UserService,private formBuilder:FormBuilder){}
 
   ngOnInit(){
-    this.currentUser = this.getFromLocalStorage();
+    this.currentUser = this.userService.getFromLocalStorage();
     this.createForm();
   }
   createForm() {
@@ -57,13 +57,6 @@ export class DepositComponent implements OnInit{
     )
   }
 
-  // A ESTE USUARIO QUE ES UN OBJETO. 
-  // LO VOY A PASAR A STRING
-  getFromLocalStorage(){
-   const userString = localStorage.getItem('currentUser');
-   //va a contener los datos del usuario que se logeó
-   return userString? JSON.parse(userString) : null;
-  }
 
 
 }

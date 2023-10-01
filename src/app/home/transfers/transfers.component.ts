@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserRegister } from 'src/app/model/UserRegister';
-
 import { UserService } from 'src/app/service/user.service';
 import Swal from 'sweetalert2';
 
@@ -18,7 +16,7 @@ export class TransfersComponent implements OnInit{
   currentUser: any;
 
   ngOnInit(): void {
-    this.currentUser = this.getFromLocalStorage();
+    this.currentUser = this.userService.getFromLocalStorage();
   }
 
   constructor(private fb: FormBuilder,private userService:UserService) {
@@ -39,11 +37,6 @@ export class TransfersComponent implements OnInit{
     } else {
       return { cbuInvalido: true }; // CBU no válido
     }
-  }
-
-  getFromLocalStorage() {
-    const userString = localStorage.getItem('currentUser');
-    return userString ? JSON.parse(userString) : null;
   }
   enviarDinero() {
 
@@ -83,12 +76,6 @@ export class TransfersComponent implements OnInit{
     }
 }
 
-    
-
-
+  
 }
-
-
-
-
 

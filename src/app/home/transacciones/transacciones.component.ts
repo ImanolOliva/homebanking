@@ -18,13 +18,10 @@ export class TransaccionesComponent {
   currentUser: UserRegister;
 
   ngOnInit() {
-    this.currentUser = this.getFromLocalStorage();
+    this.currentUser = this.userService.getFromLocalStorage();
     this.getMovimientos();
   }
-  getFromLocalStorage() {
-    const userString = localStorage.getItem('currentUser');
-    return userString ? JSON.parse(userString) : null;
-  }
+  
 
   getMovimientos(){
     this.userService.getMovimientos(this.currentUser).subscribe(

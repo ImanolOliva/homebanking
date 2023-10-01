@@ -1,6 +1,6 @@
+<app-navbar></app-navbar>
 <div class="content-container">
     <div class="app-home-wrapper">
-      <app-home></app-home>
     </div>
     <div class="form-container">
       <form [formGroup]="form">
@@ -11,7 +11,7 @@
           <input type="number" id="salary" class="form-control" formControlName="salary" min="0"/>
           <label class="form-label" for="salary"></label>
           <br>
-          <button (click)="onEnterKey()">Retirar Dinero</button>
+          <button class="btn btn-success" (click)="onEnterKey()">Retirar Dinero</button>
         </div>
         <!-- Agrega aquí otros elementos del formulario si los tienes -->
       </form>

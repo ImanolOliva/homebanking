@@ -47,8 +47,9 @@ export class RegisterComponent implements OnInit {
             Swal.fire({
               icon: 'error',
               title: 'Oops...',
-              text: 'This account is verify!',
-              footer: '<a href="">Vuelve a registrarte </a>'
+              text: 'Esta email ya se encuentra registrado!',
+              footer: '<a href="">Vuelve a registrarte </a>',
+              
             })     
           console.log(err);
         },

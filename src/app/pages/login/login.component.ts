@@ -45,7 +45,13 @@ export class LoginComponent implements OnInit{
           localStorage.setItem('currentUser', JSON.stringify(data));
         },
       error: (err) => {
-         alert('this user not found register or credentials errors'); 
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'contraseña u email no valido',
+          footer: '<a href="">Vuelve a iniciar sesion</a>',
+          
+        })   
          console.log(err);
       },
       complete:() =>{ 

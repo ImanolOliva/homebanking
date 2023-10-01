@@ -1,33 +1,40 @@
+<div class="content-container">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body p-5">
+              <h2 class="fw-bold mb-2 text-uppercase">Iniciar sesion</h2>
+              <p class="text-black-50 mb-5">Ingresa tu email y contraseña</p>
+            <form [formGroup]="form">
+              <div class="form-outline form-black mb-4">
+                <label class="form-label" for="email"></label>
+                <br>
+                <i class="fa fa-envelope" aria-hidden="true"></i> Email
+                <input type="email" id="email" class="form-control" formControlName="email" />
+                <div *ngIf="form.get('email').hasError('email')">
+                  El formato del email no es válido.
+                </div>
+              </div>
+              <div class="form-outline form-black mb-4">
+                <label class="form-label" for="password"></label>
+                <br>
+                <i class="fa fa-key" aria-hidden="true"></i> Contraseña
 
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div class="card" style="border-radius: 15px;">
-            <div class="card-body p-5">
-                <h2 class="fw-bold mb-2 text-uppercase">Iniciar sesion</h2>
-                <p class="text-black-50 mb-5">Ingresa tu email y contraseña</p>
-              <form [formGroup]="form">
-                <div class="form-outline form-black mb-4">
-                  <input type="email" id="email" class="form-control" formControlName="email" />
-                  <label class="form-label" for="email">Email</label>
-                  <div *ngIf="form.get('email').hasError('email')">
-                    El formato del email no es válido.
+                <input type="password" id="password" class="form-control" formControlName="password"/>
+              </div>
+              
+              <div class="d-flex justify-content-center">
+                  <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  [disabled]="!form.valid" (click)="save()" >Login</button>
                   </div>
-                </div>
-                <div class="form-outline form-black mb-4">
-                  <input type="password" id="password" class="form-control" formControlName="password"/>
-                  <label class="form-label" for="password">Password</label>
-                </div>
-                
-                <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"  [disabled]="!form.valid" (click)="save()" >Login</button>
-                    </div>
-                  <p class="text-center text-muted mt-5 mb-0">Todavia no estas registrado?
-                     <a class="fw-bold text-body" [routerLink]="['/register']"><u>Registrate</u></a></p>
-              </form>
-            </div>
-            </div>
+                <p class="text-center text-muted mt-5 mb-0">Todavia no estas registrado?
+                   <a class="fw-bold text-body" [routerLink]="['/register']"><u>Registrate</u></a></p>
+            </form>
+          </div>
           </div>
         </div>
       </div>
+    </div>
+</div>
+   
    

@@ -2,6 +2,7 @@
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px; 
+   flex-wrap: wrap;
   }
   
   .stilo-tabla th,
@@ -13,5 +14,11 @@
   
   .stilo-tabla th {
     background-color: #f2f2f2; 
+  }
+
+  @media screen and (min-width: 768px) {
+    .stilo-tabla th, .stilo-tabla td {
+      padding: 15px;
+    }
   }
   
