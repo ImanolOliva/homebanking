@@ -10,6 +10,8 @@ import { TransfersComponent } from './transferencias/transfers/transfers.compone
 import { ContactUsComponent } from './home/contact-us/contact-us.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DepositComponent } from './home/deposit/deposit.component';
+import { TransaccionesComponent } from './home/transacciones/transacciones.component';
+import { TarjetaComponent } from './home/tarjeta/tarjeta.component';
 
 const routes: Routes = [
  
@@ -27,6 +29,8 @@ const routes: Routes = [
     {path:'transfers',component:TransfersComponent},
     {path:'go-out',component:GoOutComponent},
     {path:'deposit',component:DepositComponent},
+    {path:'transacciones',component:TransaccionesComponent},
+    {path:'tarjeta',component:TarjetaComponent},
     {path:'**',redirectTo:'login',pathMatch:'full'}
   ] 
 ;

@@ -1,19 +1,19 @@
 <app-navbar></app-navbar>
-<div class="container">
-    <div class="col">
-        <div class="row">
-            <button class="btn-success" (click)="agregarDestinatario()">Agregar destinatario</button>
-           <form [formGroup]="form">
-            <div *ngFor="let destinatario of destinatarios">
-                <label  class="form-label" for="numeroCuenta"> Número de cuenta:</label>
-                <input class="form-control" formControlName="numeroCuenta"  type="number" name="numeroCuenta">
-                <label  class="form-label" for="nombre"> Nombre del titular:</label>
-                <input class="form-control" formControlName="nombre"  type="number" name="nombre">
-                <label  class="form-label" for="dineroTransferir"> Dinero a transferir:</label>
-                <input class="form-control" formControlName="dineroTransferir"  type="number" name="dineroTransferir">
-                <hr>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
+
+<form [formGroup]="form">
+    <label class="form-label" for="cbu">CBU:</label>
+    <input class="form-control" formControlName="cbu" type="number" name="cbu">
+    <hr>
+    <div *ngIf="form.get('cbu').hasError('cbuInvalido')">
+        CBU no válido, debe contener 16 caracteres numericos.
+    </div> 
+    <br>
+    <label for="form-label" for="dinero">Ingresa dinero</label>
+    <br>
+    <input class="form-control" formControlName="dinero" name="dinero" [disabled]="!cbuValido">
+  <button class="btn-success" [disabled]="!cbuValido" (click)="enviarDinero()">
+    Enviar dinero
+  </button>
+</form>
+
+

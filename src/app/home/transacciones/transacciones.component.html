@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+    <button (click)="getMovimientos()"> Obtener ultimos movimientos </button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>TIPO OPERACION</th>
+          <th>MONTO</th>
+          <th>DESTINO</th>
+          <th>FECHA ENVIO</th>
+          <TH>TITULAR</TH>
+        </tr>
+      </thead>
+        <tbody>
+          <tr *ngFor="let transacciones of transacciones">
+            <td>{{ transacciones.tipoOperacion }}</td>
+            <td>{{ transacciones.monto }}</td>
+            <td>{{ transacciones.destino }}</td>
+            <td>{{ transacciones.fechaEnvio }}</td>
+            <td>{{ transacciones.titular }}</td>
+          </tr>
+        </tbody>
+      </table>
+  

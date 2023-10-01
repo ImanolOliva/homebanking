@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLinkActive } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { ActivatedRoute, Router, RouterLinkActive } from '@angular/router';
 })
 export class HomeComponent{
 
-  constructor(private route:ActivatedRoute)
+  constructor(private route:ActivatedRoute,private userService:UserService)
   {
 
   }
@@ -17,6 +18,7 @@ export class HomeComponent{
 
   ngOnInit(): void {
     this.currentUser = this.getCurrentUserFormLocalStorage();
+    this.userService.getMenuItems();
    }
  
    getCurrentUserFormLocalStorage(){

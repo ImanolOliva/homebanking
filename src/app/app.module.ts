@@ -6,6 +6,7 @@ import { HomeModule } from './home/home.module';
 import { PagesModuleModule } from './pages/pages.module';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    ReactiveFormsModule,
     PagesModuleModule,
     HomeModule
   ],

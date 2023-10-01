@@ -10,6 +10,8 @@ import { SalaryComponent } from './salary/salary.component';
 import { NavbarComponent } from '../components/navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { TransaccionesComponent } from './transacciones/transacciones.component';
+import { TarjetaComponent } from './tarjeta/tarjeta.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { RouterModule } from '@angular/router';
     WithdrawalComponent,
     GoOutComponent,
     SalaryComponent,
-    NavbarComponent
+    NavbarComponent,
+    TransaccionesComponent,
+    TarjetaComponent
   ],
   imports: [
     CommonModule,

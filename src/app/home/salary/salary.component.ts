@@ -15,7 +15,7 @@ export class SalaryComponent implements OnInit{
   ngOnInit(): void {
     this.currentUser = this.getCurrentUserFromLocalStorage(); 
     this.currentUser.userName;
-    console.log(this.currentUser);   
+    console.log("estoy en el balance " + this.currentUser.salary.valueOf());   
   }
 
   getCurrentUserFromLocalStorage(): UserRegister | null {
