@@ -11,11 +11,15 @@ import { UserService } from 'src/app/service/user.service';
 export class TransaccionesComponent {
 
   constructor(private userService:UserService){}
+
+  page = 1;
+  pageSize = 6;
   transacciones:Movimientos [] = [];
   currentUser: UserRegister;
 
   ngOnInit() {
     this.currentUser = this.getFromLocalStorage();
+    this.getMovimientos();
   }
   getFromLocalStorage() {
     const userString = localStorage.getItem('currentUser');

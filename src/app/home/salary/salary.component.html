@@ -1,11 +1,9 @@
-<div class="container">
+<div class="content-container">
   <div class="app-home-wrapper">
     <app-home></app-home>
   </div>
   <div *ngIf="currentUser" class="user-info">
-    <h2>Hola, {{ currentUser.userName }}</h2>
-    <p>Tu salario es de: {{ currentUser.salary }}</p>
+    <h2>Hola, {{ currentUser.userName | uppercase  }}</h2>
+    <h3>Tu salario es de: {{ currentUser.salary }}</h3>
   </div>
 </div>
-
-

@@ -1,6 +1,9 @@
 <div class="container">
+
     <app-navbar></app-navbar>
     <div class="info">
-    <h3 *ngIf="currentUser && !isSalaryPage() && !isWitdhrawalPage() && !isContactUs() && !isTransfers() && !exit()">Welcome to {{currentUser.userName}}</h3>
-</div>
-</div>
+        <h3
+            *ngIf="currentUser && !isSalaryPage() && !isWitdhrawalPage() && !isContactUs() && !isTransfers() && !exit()">
+            Bienvenido {{currentUser.userName | uppercase}}</h3>
+
+    </div>

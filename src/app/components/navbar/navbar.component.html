@@ -1,9 +1,10 @@
-<div class="container">
-    <nav class="navbar ">
+<div class="sidebar">
+    <nav class="navbar">
         <ul class="navbar-nav flex-column">
-           <div *ngFor="let menu of menuItems">
-                <a [routerLink]="menu.url">{{menu.nombre}}</a>
-           </div>
+          <div *ngFor="let menu of menuItems">
+            <a [routerLink]="menu.url">{{ menu.nombre }}</a>
+          </div>
         </ul>
-    </nav>
+      </nav>
 </div>
+  

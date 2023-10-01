@@ -1,6 +1,6 @@
 export class UsuarioTarjeta{
     nombre:string;
-    salario:number;
-    nroTarjeta:number;
+    saldo:number;
+    nroTarjeta:string;
     fechaVencimiento:string;
 }

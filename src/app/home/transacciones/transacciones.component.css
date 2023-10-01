@@ -1,0 +1,17 @@
+.stilo-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px; 
+  }
+  
+  .stilo-tabla th,
+  .stilo-tabla td {
+    border: 1px solid #dddddd; 
+    text-align: left;
+    padding: 8px; 
+  }
+  
+  .stilo-tabla th {
+    background-color: #f2f2f2; 
+  }
+  

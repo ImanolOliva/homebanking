@@ -1,1 +1,17 @@
-<p>tarjeta works!</p>
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="credit-card">
+      <div class="credit-card-circle"></div>
+      <div class="credit-card-content">
+        <h1 class="credit-card-label">Titular de la tarjeta:</h1>
+        <p class="credit-card-text">{{ usuarioTarjeta.nombre }}</p>
+        <h1 class="credit-card-label">Saldo disponible:</h1>
+        <p class="credit-card-text">{{ usuarioTarjeta.saldo }}</p>
+        <h1 class="credit-card-label">Fecha de vencimiento:</h1>
+        <p class="credit-card-text">{{ usuarioTarjeta.fechaVencimiento }}</p>
+        <h1 class="credit-card-label">Nro de tarjeta:</h1>
+        <p class="credit-card-text">{{ usuarioTarjeta.nroTarjeta }}</p>
+      </div>
+    </div>
+  </div>
+  

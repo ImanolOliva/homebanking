@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TransaccionesComponent } from './transacciones/transacciones.component';
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { TarjetaComponent } from './tarjeta/tarjeta.component';
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   exports:[
    NavbarComponent

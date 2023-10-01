@@ -1,7 +1,8 @@
-<app-navbar></app-navbar>
-    <button (click)="getMovimientos()"> Obtener ultimos movimientos </button>
 
-    <table>
+<app-navbar></app-navbar>
+<div class="content-container">
+
+    <table class="stilo-tabla">
       <thead>
         <tr>
           <th>TIPO OPERACION</th>
@@ -12,7 +13,7 @@
         </tr>
       </thead>
         <tbody>
-          <tr *ngFor="let transacciones of transacciones">
+          <tr *ngFor="let transacciones of transacciones | paginate: { itemsPerPage: pageSize, currentPage: page }">
             <td>{{ transacciones.tipoOperacion }}</td>
             <td>{{ transacciones.monto }}</td>
             <td>{{ transacciones.destino }}</td>
@@ -21,4 +22,14 @@
           </tr>
         </tbody>
       </table>
+
+
+      <!-- Cuando el usuario cambia de boton se escucha el evento pageChante y se actualiza 
+      la variable de paginacion. pagination-controls es un contenedor propio de la bibliotca
+      para el anterior y el siguiente -->
+      <div class="pagination-controls">
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+      </div>
   
+  </div>
+    
