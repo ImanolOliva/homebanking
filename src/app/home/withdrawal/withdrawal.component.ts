@@ -48,15 +48,19 @@ export class WithdrawalComponent implements OnInit {
           localStorage.setItem('currentUser', JSON.stringify(data));
         },
         error:(err)=>{
-          if(err.status == 400){
-            alert("No posee saldo suficiente");
-          }
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'no posee saldo suficiente',
+            showConfirmButton: false,
+            timer: 2500
+          });
         },
         complete() {
           Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'successfyle operation',
+            title: 'Operacion realizada',
             showConfirmButton: false,
             timer: 2500
           });

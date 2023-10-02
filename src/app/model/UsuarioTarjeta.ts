@@ -3,4 +3,5 @@ export class UsuarioTarjeta{
     saldo:number;
     nroTarjeta:string;
     fechaVencimiento:string;
+    tipo:string;
 }

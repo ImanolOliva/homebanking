@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MenuItem } from 'src/app/model/MenuItem';
 import { UserService } from 'src/app/service/user.service';
@@ -13,17 +13,18 @@ export class NavbarComponent implements OnInit {
   menuItems: MenuItem[] = [];
 
 
-  constructor(private route:ActivatedRoute,
-              private userService:UserService){
-
-  }
 
   ngOnInit(){
     this.userService.getMenuItems().subscribe((menuItems: MenuItem[]) => {
       this.menuItems = menuItems;
-    });
+    })
   }
 
- 
+  constructor(private userService:UserService){
+
+  }
+
 
 }
+ 
+

@@ -12,6 +12,10 @@ import { TransaccionesComponent } from './transacciones/transacciones.component'
 import { TarjetaComponent } from './tarjeta/tarjeta.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { TransfersComponent } from './transfers/transfers.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListItemIcon, MatListModule} from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -30,7 +34,12 @@ import { TransfersComponent } from './transfers/transfers.component';
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule
+
   ],
   exports:[
    NavbarComponent

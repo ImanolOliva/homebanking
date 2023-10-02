@@ -1,16 +1,10 @@
 .content-container {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    justify-content: center; 
+    align-items: center; 
     height: 100vh;
   }
   
-  .form-container {
-    display: flex;
-    flex-direction: column; /* Apila los elementos verticalmente */
-    align-items: flex-start; /* Alinea a la izquierda */
-    max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
-  }
+ 
   
-  /* Puedes agregar estilos adicionales según tus necesidades */
   

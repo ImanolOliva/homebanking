@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit{
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Welcome',
+          title: '',
           showConfirmButton: false,
           timer: 2500
           });

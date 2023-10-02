@@ -12,7 +12,7 @@ export class TarjetaComponent implements OnInit{
 
 
   currentUser:any;
-  usuarioTarjeta: any = {}; //Inicializo el objeto vacio para no tener problemas de undefined 
+  usuarioTarjeta: UsuarioTarjeta[] = [] //Inicializo el objeto vacio para no tener problemas de undefined 
 
 
   constructor(private userService:UserService){}
@@ -22,21 +22,18 @@ export class TarjetaComponent implements OnInit{
     this.getTarjeta();
   }
 
-
-  
-
   getTarjeta(){
-   
-    this.usuarioTarjeta.nombre = this.currentUser.userName;
-    this.usuarioTarjeta.saldo = this.currentUser.salary;
+   let usuarioTarjeta = new UsuarioTarjeta();
 
-    this.userService.getTarjeta(this.usuarioTarjeta).subscribe(
+   usuarioTarjeta.nombre = this.currentUser.userName;
+   usuarioTarjeta.saldo = this.currentUser.salary;
+   
+    this.userService.getTarjeta(usuarioTarjeta).subscribe(
       {
-        next:(value:UsuarioTarjeta) => {
-           this.usuarioTarjeta.nombre = value.nombre;
-           this.usuarioTarjeta.saldo = value.saldo;
-           this.usuarioTarjeta.fechaVencimiento = value.fechaVencimiento;
-           this.usuarioTarjeta.nroTarjeta = value.nroTarjeta;
+        next:(usuarioTarjeta:UsuarioTarjeta[]) => {
+            this.usuarioTarjeta = usuarioTarjeta;
+            console.log(usuarioTarjeta);
+
         }, error(err) {
           console.log("capturando el error",err);
         },

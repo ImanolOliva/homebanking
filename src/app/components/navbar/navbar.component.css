@@ -1,29 +1,25 @@
-/* Estilos para el contenedor principal (sidebar) */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%; /* Establece la altura al 100% */
-    width: 250px; /* Ancho del navbar */
-    background-color: #333; /* Color de fondo del navbar */
-    color: #fff; /* Color de texto del navbar */
-    overflow-y: auto; /* Agrega desplazamiento vertical si es necesario */
-  }
+.menu-item {
+  padding: 0 10px; /* Agr
+  ega espacio horizontal entre las opciones */
+  background-color:  #00a896;
+
+}
+.navbar{
+  justify-content: space-around;
+  background-color:  #00a896;
+
   
-  /* Estilos para el navbar dentro del contenedor */
-  .navbar {
-    padding: 20px; /* Añade relleno al contenido del navbar */
-  }
+}
+.sidebar{
+  padding: 20px;
   
-  /* Estilos para los elementos del menú */
-  .navbar a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 0;
-  }
+}
+.nav-link{
+  padding: 20px;
   
-  .navbar a:hover {
-    background-color: #555; /* Cambia el color de fondo al pasar el mouse */
-  }
-  
+}
+.nav-item a:hover{
+  justify-content: space-around;
+  color:  #54f1ca;
+
+}

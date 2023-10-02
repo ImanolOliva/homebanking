@@ -1,18 +1,5 @@
-.content-container {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    height: 100vh;
-  }
-  
-  .app-home-wrapper {
-    display: flex;
-    flex-direction: column; /* Apila los elementos verticalmente */
-    align-items: flex-start; /* Alinea a la izquierda */
-    max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
-  }
-  
-  .user-info {
-    text-align: center; /* Centra horizontalmente los elementos de user-info */
-  }
-  
+.container{
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}

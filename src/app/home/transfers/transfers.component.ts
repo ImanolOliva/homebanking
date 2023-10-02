@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
   templateUrl: './transfers.component.html',
   styleUrls: ['./transfers.component.css']
 })
-export class TransfersComponent implements OnInit{
+export class TransfersComponent implements OnInit {
 
   form: FormGroup;
   cbuValido: boolean = false;
@@ -19,12 +19,11 @@ export class TransfersComponent implements OnInit{
     this.currentUser = this.userService.getFromLocalStorage();
   }
 
-  constructor(private fb: FormBuilder,private userService:UserService) {
+  constructor(private fb: FormBuilder, private userService: UserService) {
     this.form = this.fb.group({
       cbu: ['', [Validators.required, this.validarCBU]],
       dinero: ['', [Validators.required]],
     });
-    // Escucha cambios en el valor del CBU y actualiza cbuValido
     this.form.get('cbu').valueChanges.subscribe((value) => {
       this.cbuValido = this.form.get('cbu').valid;
     });
@@ -33,9 +32,9 @@ export class TransfersComponent implements OnInit{
   validarCBU(control) {
     const cbu = control.value;
     if (cbu && /^\d{16}$/.test(cbu)) {
-      return null; // CBU válido
+      return null; 
     } else {
-      return { cbuInvalido: true }; // CBU no válido
+      return { cbuInvalido: true };
     }
   }
   enviarDinero() {
@@ -46,13 +45,13 @@ export class TransfersComponent implements OnInit{
 
 
 
-    if(dinero < this.currentUser.salary){
+    if (dinero < this.currentUser.salary) {
       this.currentUser.salary = this.currentUser.salary - dinero;
 
-      this.userService.transferencia(dinero,cbu,email).subscribe(
+      this.userService.transferencia(dinero, cbu, email).subscribe(
         {
-          next: (value:UserRegister) => {
-            this.currentUser.salary =value.salary;  
+          next: (value: UserRegister) => {
+            this.currentUser.salary = value.salary;
 
             localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
             console.log(JSON.stringify(this.currentUser));
@@ -62,20 +61,25 @@ export class TransfersComponent implements OnInit{
             console.log(err);
 
           },
-          complete(){
+          complete() {
             Swal.fire({
               position: 'center',
               icon: 'success',
               title: 'Operacion realizada',
-              });
+            });
           },
         }
       )
-    }else{
-      alert("No posee saldo suficiente" + "su saldo actual es de" + this.currentUser.salary);
+    } else {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'No posee saldo suficiente',
+      });
     }
+  }
 }
 
-  
-}
+
+
 

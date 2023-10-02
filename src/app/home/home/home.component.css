@@ -1,0 +1,17 @@
+.contenedor{
+    display: flex;
+}
+.contenedor {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    flex-wrap: wrap;
+  }
+  
+  
+  .componente2 {
+    padding-left: 10rem;
+    padding: 10rem;
+    justify-content:center ;
+  }
+  
