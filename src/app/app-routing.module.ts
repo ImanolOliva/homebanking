@@ -6,7 +6,6 @@ import { GoOutComponent } from './home/go-out/go-out.component';
 import { SalaryComponent } from './home/salary/salary.component';
 import { LoginComponent } from './pages/login/login.component';
 import { WithdrawalComponent } from './home/withdrawal/withdrawal.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DepositComponent } from './home/deposit/deposit.component';
 import { TransaccionesComponent } from './home/transacciones/transacciones.component';
 import { TarjetaComponent } from './home/tarjeta/tarjeta.component';

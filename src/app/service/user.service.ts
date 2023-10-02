@@ -1,4 +1,4 @@
-import { HttpClientModule,HttpClient, HttpStatusCode, HttpHeaders } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HttpStatusCode, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserRegister } from '../model/UserRegister';
 import { environment } from 'src/environments/environment.prod';
@@ -13,52 +13,61 @@ import { UsuarioTarjeta } from '../model/UsuarioTarjeta';
 export class UserService {
 
 
- 
-  
+
+
   currentUser: any;
   status: number;
   data: any
 
 
-  constructor(private http:HttpClient, private router:Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
 
   getFromLocalStorage() {
     const userString = localStorage.getItem('currentUser');
     return userString ? JSON.parse(userString) : null;
+
   }
 
-  
-  postUserRegister(request:UserRegister) {
+
+  postUserRegister(request: UserRegister) {
+
     let endpoint = "v1";
-    
-    return this.http.post(environment.apiUrl +`${endpoint}`,request);
+    return this.http.post(environment.apiUrl + `${endpoint}`, request);
+
   }
 
 
-  postUserLogin(request:UserRegister){
+  postUserLogin(request: UserRegister) {
+
     let endpoint = "v2";
-    return this.http.post(environment.apiUrl + `${endpoint}`,request);
+    return this.http.post(environment.apiUrl + `${endpoint}`, request);
+
+
   }
 
 
-  getSalaryWinthdrewal(request:UserRegister){
+  getSalaryWinthdrewal(request: UserRegister) {
+
     let endpoint = "v3"
-    return this.http.post(environment.apiUrl +`${endpoint}`,request)
+    return this.http.post(environment.apiUrl + `${endpoint}`, request)
+
   }
-  
-  getSalaryDeposit(request:UserRegister){
+
+  getSalaryDeposit(request: UserRegister) {
     let endpoint = "v4"
-    return this.http.post(environment.apiUrl +`${endpoint}`,request)
+    return this.http.post(environment.apiUrl + `${endpoint}`, request)
+
   }
-  
-  getMovimientos(request:UserRegister){
+
+  getMovimientos(request: UserRegister) {
     let endpoint = "v6"
-    return this.http.post(environment.apiUrl +`${endpoint}`,request)
+    return this.http.post(environment.apiUrl + `${endpoint}`, request)
 
   }
 
-  transferencia(dinero:number,cbu:number,email:string,){
+
+  transferencia(dinero: number, cbu: number, email: string,) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
@@ -67,21 +76,25 @@ export class UserService {
     let endpoint = "v5"
     const data = {
       dinero: dinero,
-      cbu:cbu,
-      email:email
+      cbu: cbu,
+      email: email
     }
-    return this.http.post(environment.apiUrl+`${endpoint}`,data);
+    return this.http.post(environment.apiUrl + `${endpoint}`, data);
+
   }
+
 
   getMenuItems(): Observable<MenuItem[]> {
     let endpoint = "v7"
-    return this.http.get<MenuItem[]>(environment.apiUrl+`${endpoint}`);
+    return this.http.get<MenuItem[]>(environment.apiUrl + `${endpoint}`);
+
   }
 
 
-  getTarjeta(request:UsuarioTarjeta){
+  getTarjeta(request: UsuarioTarjeta) {
     let endpoint = "v8";
-    return this.http.post(environment.apiUrl+`${endpoint}`,request);
+    return this.http.post(environment.apiUrl + `${endpoint}`, request);
+
   }
 
 }
