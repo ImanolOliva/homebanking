@@ -21,4 +21,7 @@ export class SalaryComponent implements OnInit{
 
   
 
+
+  
+
 }

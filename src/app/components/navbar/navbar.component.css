@@ -1,7 +1,6 @@
 .menu-item {
-  padding: 0 10px; /* Agr
-  ega espacio horizontal entre las opciones */
-  background-color:  #00a896;
+  padding: 0 10px; 
+  background-color:  #b1b5b4;
 
 }
 .navbar{
@@ -20,6 +19,6 @@
 }
 .nav-item a:hover{
   justify-content: space-around;
-  color:  #54f1ca;
+  color:   #b1b5b4;
 
 }

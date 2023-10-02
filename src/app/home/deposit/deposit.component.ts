@@ -48,7 +48,7 @@ export class DepositComponent implements OnInit{
           Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Operacion realizada',
+            title: 'Deposito realizado ',
             showConfirmButton: false,
             timer: 2500
           });

@@ -1,21 +1,20 @@
 <app-navbar></app-navbar>
+
 <div class="content-container">
   <form [formGroup]="form">
     <label class="form-label" for="cbu">CBU:</label>
     <input class="form-control" formControlName="cbu" type="number" name="cbu">
     <hr>
     <div *ngIf="form.get('cbu').hasError('cbuInvalido')">
-        CBU no válido, debe contener 16 caracteres numericos.
-    </div> 
+      CBU no válido, debe contener 16 caracteres numericos.
+    </div>
     <br>
     <label for="form-label" for="dinero">Ingresa dinero</label>
-    <br>
     <input class="form-control" formControlName="dinero" name="dinero" [disabled]="!cbuValido">
-  <button class="btn btn-success" [disabled]="!cbuValido" (click)="enviarDinero()">
-    Enviar dinero
-  </button>
-</form>
-
-
-
+    <br>
+    <br>
+    <button class="btn btn-success" [disabled]="!cbuValido" (click)="enviarDinero()">
+      Enviar dinero
+    </button>
+  </form>
 </div>

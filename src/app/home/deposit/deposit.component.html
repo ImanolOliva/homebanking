@@ -1,15 +1,24 @@
 <app-navbar></app-navbar>
-
 <div class="content-container">
     <div class="form-container">
         <form [formGroup]="form">
             <div class="form-outline form-black mb-4">
                 <div class="deposit-info">
+                    <i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+                    <div style="display: flex; align-items: center;">
+                        <div style="margin-left: 10px;"> 
+                            <br>
+                            <br>
+                            <input type="number" id="salary" class="form-control border-0 border-bottom" formControlName="salary" min="0" style="outline: none; box-shadow: none; border-radius: 0;">
+                            <p>Ingrese cantidad de dinero a depositar</p>
+
+                        </div>
+                    </div>
                 </div>
-                <input type="number" id="salary" class="form-control" formControlName="salary" min="0" />
-                <label class="form-label" for="salary">Ingrese cantidad de dinero</label>
                 <br>
-                <button class="btn btn-success" (click)="depositarDinero()">Depositar dinero</button>
+                <br>
+                <br>
+                <button class="btn btn-success" (click)="depositarDinero()">Continuar</button>
             </div>
         </form>
     </div>

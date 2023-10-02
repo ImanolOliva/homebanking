@@ -1,12 +1,17 @@
+
 .stilo-tabla {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px; 
    flex-wrap: wrap;
+   background-color:white;
+
   }
   
   .stilo-tabla th,
   .stilo-tabla td {
+    background-color:white;
+
     border: 1px solid #dddddd; 
     text-align: left;
     padding: 8px; 

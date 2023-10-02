@@ -1,16 +1,15 @@
 <div class="container">
-    <app-navbar></app-navbar>
-    <div class="info">
-        <h3 style="text-align: center; border-bottom: 1px solid  #00a896;" *ngIf="currentUser && !isSalaryPage() && !isWitdhrawalPage()">
-            Bienvenido {{currentUser.userName | uppercase}} </h3>
-    </div>
+  <app-navbar></app-navbar>
+  <div class="info">
+    <h3 style="text-align: center; border-bottom: 1px solid  #00a896;"
+      *ngIf="currentUser && !isSalaryPage() && !isWitdhrawalPage()">
+      Bienvenido {{currentUser.userName | uppercase}} <br>
+      Tu salario es: {{currentUser.salary}}
+    </h3>
+  </div>
 </div>
 <div class="contenedor">
-    <div class="componente1">
-        <app-tarjeta></app-tarjeta>
-    </div>
-    <div class="componente2">
-      <app-salary></app-salary>
-    </div>
+  <div class="componente2">
+    <app-tarjeta></app-tarjeta>
   </div>
-  
+</div>

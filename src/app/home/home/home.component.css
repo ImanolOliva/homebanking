@@ -8,10 +8,11 @@
     flex-wrap: wrap;
   }
   
+  .componente1{
+    justify-content:center;
+  }
   
   .componente2 {
-    padding-left: 10rem;
-    padding: 10rem;
-    justify-content:center ;
+    justify-content:center;
   }
   

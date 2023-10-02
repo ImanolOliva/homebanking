@@ -13,7 +13,7 @@ export class TransaccionesComponent {
   constructor(private userService:UserService){}
 
   page = 1;
-  pageSize = 6;
+  pageSize = 3;
   transacciones:Movimientos [] = [];
   currentUser: UserRegister;
 

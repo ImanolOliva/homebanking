@@ -60,7 +60,7 @@ export class WithdrawalComponent implements OnInit {
           Swal.fire({
             position: 'center',
             icon: 'success',
-            title: 'Operacion realizada',
+            title: 'Retiro de dinero aprobado',
             showConfirmButton: false,
             timer: 2500
           });
